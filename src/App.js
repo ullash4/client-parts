@@ -5,9 +5,15 @@ import Home from "./Components/Pages/Home/Home";
 import MyPortfolio from "./Components/Pages/MyPortfolio/MyPortfolio";
 import Navbar from "./Components/Shared/Navbar";
 import NotfoundPage from "./Components/Shared/NotfoundPage";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+import Footer from "./Components/Shared/Footer";
 
 function App() {
+  useEffect(()=>{
+    AOS.init();
+  },[])
   return (
     <div>
       <Navbar />
@@ -19,6 +25,7 @@ function App() {
         <Route path="/portfolio" element={<MyPortfolio />} />
         <Route path="*" element={<NotfoundPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
