@@ -12,6 +12,8 @@ import Footer from "./Components/Shared/Footer";
 import Login from "./Components/Shared/Login";
 import Signup from "./Components/Shared/Signup";
 import ShowAllParts from "./Components/Pages/Products/ShowAllParts";
+import Purchase from "./Components/Pages/Products/Purchase";
+import AllReviews from "./Components/Pages/Reviews/AllReviews";
 
 function App() {
   useEffect(()=>{
@@ -29,6 +31,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/allparts" element={<ShowAllParts />} />
+        <Route path="/allparts/:id" element={<Purchase />} />
+        <Route path="/allreview" element={<AllReviews />} />
         <Route path="*" element={<NotfoundPage />} />
       </Routes>
       <Footer />

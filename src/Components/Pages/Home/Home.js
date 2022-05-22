@@ -1,5 +1,6 @@
 import React from 'react'
 import PartsForHome from '../Products/PartsForHome'
+import Reviews from '../Reviews/Reviews'
 import BusinessStats from './BusinessStats'
 import ContactUs from './ContactUs'
 import Landing from './Landing'
@@ -12,6 +13,7 @@ function Home() {
       <PartsForHome />
       <Marketing />
       <BusinessStats />
+      <Reviews />
       <ContactUs />
     </div>
   )

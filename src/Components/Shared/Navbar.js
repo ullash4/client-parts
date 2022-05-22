@@ -62,6 +62,9 @@ function Navbar() {
             <li>
               <NavLink to={'/allparts'}>All Parts</NavLink>
             </li>
+            <li>
+              <NavLink to={'/allreview'}>All Review</NavLink>
+            </li>
         </ul>
       </div>
       <div class="navbar-end">
