@@ -38,6 +38,9 @@ function Navbar() {
             <li>
               <NavLink to={'/portfolio'}>My Portfolio</NavLink>
             </li>
+            <li>
+              <NavLink to={'/allparts'}>All Parts</NavLink>
+            </li>
           </ul>
         </div>
         <Link to={'/'} class="btn btn-ghost normal-case text-xl">Cavalry-Parts</Link>
@@ -55,6 +58,9 @@ function Navbar() {
             </li>
             <li>
               <NavLink to={'/portfolio'}>My Portfolio</NavLink>
+            </li>
+            <li>
+              <NavLink to={'/allparts'}>All Parts</NavLink>
             </li>
         </ul>
       </div>

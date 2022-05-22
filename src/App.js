@@ -10,6 +10,8 @@ import 'aos/dist/aos.css';
 import { useEffect } from "react";
 import Footer from "./Components/Shared/Footer";
 import Login from "./Components/Shared/Login";
+import Signup from "./Components/Shared/Signup";
+import ShowAllParts from "./Components/Pages/Products/ShowAllParts";
 
 function App() {
   useEffect(()=>{
@@ -25,6 +27,8 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/portfolio" element={<MyPortfolio />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/allparts" element={<ShowAllParts />} />
         <Route path="*" element={<NotfoundPage />} />
       </Routes>
       <Footer />
