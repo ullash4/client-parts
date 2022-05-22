@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 
 function useProducts() {
-  const { isLoading, refetch, data: products } = useQuery("repoData", () =>
+  const { isLoading, refetch, data: products } = useQuery("allProducts", () =>
     fetch("fakeparts.json").then((res) => res.json())
   );
   
