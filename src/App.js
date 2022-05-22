@@ -9,6 +9,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
 import Footer from "./Components/Shared/Footer";
+import Login from "./Components/Shared/Login";
 
 function App() {
   useEffect(()=>{
@@ -23,6 +24,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/portfolio" element={<MyPortfolio />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotfoundPage />} />
       </Routes>
       <Footer />
