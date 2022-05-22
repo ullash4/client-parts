@@ -8,9 +8,9 @@ function PartsCard({ product }) {
     navigate(`allparts/${id}`)
   }
   return (
-    <div class="card lg:max-w-lg bg-base-100 shadow-xl">
+    <div class="card lg:max-w-lg bg-base-100 shadow-2xl">
       <figure>
-        <img className="w-[286px] h-[286px]" src={picture} alt="Shoes" />
+        <img className="" src={picture} alt="Shoes" />
       </figure>
       <div class="card-body">
         <h2 class="card-title">{name}</h2>

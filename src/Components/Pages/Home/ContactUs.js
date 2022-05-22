@@ -3,9 +3,8 @@ import contactus from '../../../assets/contactus.png'
 
 function ContactUs() {
   return (
-      <div className='my-16'>
-      <h1 className='text-3xl font-bold text-center mb-6'>Contact us</h1>
-      <h1 className='text-3xl font-bold text-center mb-6'>Stay Conneted with Cavalry Parts</h1>
+      <div className='my-16 px-10'>
+      <h1 className='max-w-xl text-3xl font-bold sm:text-6xl mb-6'>Stay Conneted with Cavalry Parts</h1>
     <div class="hero ">
         
   <div class="hero-content flex-col lg:flex-row-reverse gap-32">

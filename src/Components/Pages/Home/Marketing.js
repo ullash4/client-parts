@@ -2,20 +2,17 @@ import React from 'react'
 
 function Marketing() {
   return (
-    <section class="text-white bg-gray-900">
+    <section class="text-black px-10">
+      <h2 class="text-3xl font-bold sm:text-6xl max-w-xl">Kickstart your marketing</h2>
   <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
     <div class="max-w-lg mx-auto text-center">
-      <h2 
-      data-aos="fade-right"  
-      data-aos-duration="500"
-      data-aos-delay="300"
-      class="text-3xl font-bold sm:text-4xl">Kickstart your marketing</h2>
+      
 
       <p
       data-aos="fade-right"  
       data-aos-duration="500"
       data-aos-delay="500"
-      class="mt-4 text-gray-300">
+      class="mt-4 text-black">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur
         aliquam doloribus nesciunt eos fugiat. Vitae aperiam fugit consequuntur
         saepe laborum.
@@ -27,12 +24,12 @@ function Marketing() {
       data-aos="flip-left"
       data-aos-easing="ease-out-cubic"
       data-aos-duration="2000"
-        class="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-pink-500/10 hover:border-pink-500/10"
+        class="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-blue-500/10 hover:border-pink-500/10"
         href="/services/digital-campaigns"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="w-10 h-10 text-pink-500"
+          class="w-10 h-10 text-primary"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -49,9 +46,9 @@ function Marketing() {
           />
         </svg>
 
-        <h3 class="mt-4 text-xl font-bold text-white">Digital campaigns</h3>
+        <h3 class="mt-4 text-xl font-bold text-black">Digital campaigns</h3>
 
-        <p class="mt-1 text-sm text-gray-300">
+        <p class="mt-1 text-sm text-black">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo
           possimus adipisci distinctio alias voluptatum blanditiis laudantium.
         </p>
@@ -61,12 +58,12 @@ function Marketing() {
       data-aos="flip-left"
       data-aos-easing="ease-out-cubic"
       data-aos-duration="2000"
-        class="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-pink-500/10 hover:border-pink-500/10"
+        class="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-blue-500/10 hover:border-pink-500/10"
         href="/services/digital-campaigns"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="w-10 h-10 text-pink-500"
+          class="w-10 h-10 text-primary"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -83,9 +80,9 @@ function Marketing() {
           />
         </svg>
 
-        <h3 class="mt-4 text-xl font-bold text-white">Digital campaigns</h3>
+        <h3 class="mt-4 text-xl font-bold text-black">Digital campaigns</h3>
 
-        <p class="mt-1 text-sm text-gray-300">
+        <p class="mt-1 text-sm text-black">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo
           possimus adipisci distinctio alias voluptatum blanditiis laudantium.
         </p>
@@ -95,12 +92,12 @@ function Marketing() {
       data-aos="flip-left"
       data-aos-easing="ease-out-cubic"
       data-aos-duration="2000"
-        class="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-pink-500/10 hover:border-pink-500/10"
+        class="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-blue-500/10 hover:border-pink-500/10"
         href="/services/digital-campaigns"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="w-10 h-10 text-pink-500"
+          class="w-10 h-10 text-primary"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -117,9 +114,9 @@ function Marketing() {
           />
         </svg>
 
-        <h3 class="mt-4 text-xl font-bold text-white">Digital campaigns</h3>
+        <h3 class="mt-4 text-xl font-bold text-black">Digital campaigns</h3>
 
-        <p class="mt-1 text-sm text-gray-300">
+        <p class="mt-1 text-sm text-black">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo
           possimus adipisci distinctio alias voluptatum blanditiis laudantium.
         </p>
@@ -129,12 +126,12 @@ function Marketing() {
       data-aos="flip-left"
       data-aos-easing="ease-out-cubic"
       data-aos-duration="2000"
-        class="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-pink-500/10 hover:border-pink-500/10"
+        class="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-blue-500/10 hover:border-pink-500/10"
         href="/services/digital-campaigns"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="w-10 h-10 text-pink-500"
+          class="w-10 h-10 text-primary"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -151,9 +148,9 @@ function Marketing() {
           />
         </svg>
 
-        <h3 class="mt-4 text-xl font-bold text-white">Digital campaigns</h3>
+        <h3 class="mt-4 text-xl font-bold text-black">Digital campaigns</h3>
 
-        <p class="mt-1 text-sm text-gray-300">
+        <p class="mt-1 text-sm text-black">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo
           possimus adipisci distinctio alias voluptatum blanditiis laudantium.
         </p>
@@ -163,12 +160,12 @@ function Marketing() {
       data-aos="flip-left"
       data-aos-easing="ease-out-cubic"
       data-aos-duration="2000"
-        class="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-pink-500/10 hover:border-pink-500/10"
+        class="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-blue-500/10 hover:border-pink-500/10"
         href="/services/digital-campaigns"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="w-10 h-10 text-pink-500"
+          class="w-10 h-10 text-primary"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -185,9 +182,9 @@ function Marketing() {
           />
         </svg>
 
-        <h3 class="mt-4 text-xl font-bold text-white">Digital campaigns</h3>
+        <h3 class="mt-4 text-xl font-bold text-black">Digital campaigns</h3>
 
-        <p class="mt-1 text-sm text-gray-300">
+        <p class="mt-1 text-sm text-black">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo
           possimus adipisci distinctio alias voluptatum blanditiis laudantium.
         </p>
@@ -197,12 +194,12 @@ function Marketing() {
       data-aos="flip-left"
       data-aos-easing="ease-out-cubic"
       data-aos-duration="2000"
-        class="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-pink-500/10 hover:border-pink-500/10"
+        class="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-blue-500/10 hover:border-pink-500/10"
         href="/services/digital-campaigns"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="w-10 h-10 text-pink-500"
+          class="w-10 h-10 text-primary"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -219,9 +216,9 @@ function Marketing() {
           />
         </svg>
 
-        <h3 class="mt-4 text-xl font-bold text-white">Digital campaigns</h3>
+        <h3 class="mt-4 text-xl font-bold text-black">Digital campaigns</h3>
 
-        <p class="mt-1 text-sm text-gray-300">
+        <p class="mt-1 text-sm text-black">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo
           possimus adipisci distinctio alias voluptatum blanditiis laudantium.
         </p>
@@ -233,7 +230,7 @@ function Marketing() {
       data-aos="flip-left"
       data-aos-easing="ease-out-cubic"
       data-aos-duration="2000"
-        class="inline-flex items-center px-8 py-3 mt-8 text-white bg-pink-600 border border-pink-600 rounded hover:bg-transparent active:text-pink-500 focus:outline-none focus:ring"
+        class="inline-flex items-center px-8 py-3 mt-8 text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-black active:text-primary focus:outline-none focus:ring"
         href="/get-started"
       >
         <span class="text-sm font-medium"> Get Started </span>
