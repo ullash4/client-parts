@@ -67,7 +67,8 @@ function Navbar() {
             </li>
         </ul>
       </div>
-      <div class="navbar-end">
+      <div class="navbar-end gap-2">
+        <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
         <Link to={'/login'} class="btn btn-md btn-primary">Login</Link>
       </div>
     </div>

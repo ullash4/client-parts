@@ -14,6 +14,13 @@ import Signup from "./Components/Shared/Signup";
 import ShowAllParts from "./Components/Pages/Products/ShowAllParts";
 import Purchase from "./Components/Pages/Products/Purchase";
 import AllReviews from "./Components/Pages/Reviews/AllReviews";
+import MyProfile from "./Components/Pages/Dashboard/MyProfile";
+import AddProduct from "./Components/Pages/Dashboard/AddProduct";
+import AddReview from "./Components/Pages/Dashboard/AddReview";
+import MakeAdmin from "./Components/Pages/Dashboard/MakeAdmin";
+import ManageAllOrders from "./Components/Pages/Dashboard/ManageAllOrders";
+import ManageProduct from "./Components/Pages/Dashboard/ManageProduct";
+import MyOrder from "./Components/Pages/Dashboard/MyOrder";
 
 function App() {
   useEffect(()=>{
@@ -25,7 +32,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/portfolio" element={<MyPortfolio />} />
         <Route path="/login" element={<Login />} />
@@ -33,6 +39,20 @@ function App() {
         <Route path="/allparts" element={<ShowAllParts />} />
         <Route path="/allparts/:id" element={<Purchase />} />
         <Route path="/allreview" element={<AllReviews />} />
+
+        <Route path="/dashboard" 
+        element={ <Dashboard /> }>
+
+        <Route path="myprofile" element={<MyProfile />}  />
+        <Route path="addproduct" element={<AddProduct />}  />
+        <Route path="addreview" element={<AddReview />}  />
+        <Route path="makeadmin" element={<MakeAdmin />}  />
+        <Route path="manageallorders" element={<ManageAllOrders />}  />
+        <Route path="manageproduct" element={<ManageProduct />}  />
+        <Route path="myorder" element={<MyOrder />}  />
+        
+        </Route>
+
         <Route path="*" element={<NotfoundPage />} />
       </Routes>
       <Footer />
@@ -41,3 +61,5 @@ function App() {
 }
 
 export default App;
+
+
