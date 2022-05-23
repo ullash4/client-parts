@@ -1,14 +1,11 @@
 import React from 'react'
 import useProducts from '../../Hooks/useProducts';
-import Loading from '../../Shared/Loading';
+
 import PartsCard from './PartsCard';
 
 function PartsForHome() {
-    const [products, isLoading, refetch] = useProducts();
-    if (isLoading) {
-      return <Loading />;
-    }
-    refetch();
+    const [products] = useProducts();
+    
     return (
       <div className="px-10 my-10">
         <h1 className='max-w-xl text-3xl font-bold sm:text-6xl mb-20'>Our Collections</h1>

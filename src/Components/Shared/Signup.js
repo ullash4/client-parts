@@ -6,6 +6,7 @@ import auth from "../../firebase.init";
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { toast } from "react-toastify";
 import Loading from "./Loading";
+import useToken from "../Hooks/useToken";
 
 
 function Signup() {
@@ -24,6 +25,8 @@ function Signup() {
   const [updateProfile, updating, error] = useUpdateProfile(auth);
 
   const navigate = useNavigate()
+
+  const [token] = useToken(user)
 
   const location = useLocation();
   let from = location.state?.from?.pathname || '/';

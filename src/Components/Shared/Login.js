@@ -5,6 +5,7 @@ import SocialLogin from "./SocialLogin";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Loading from "./Loading";
+import useToken from "../Hooks/useToken";
 
 function Login() {
   const {
@@ -19,7 +20,7 @@ function Login() {
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
-
+  const [token] = useToken(user)
   const navigate = useNavigate()
   const location = useLocation();
   let from = location.state?.from?.pathname || '/';

@@ -1,13 +1,10 @@
 import React from "react";
 import useProducts from "../../Hooks/useProducts";
-import Loading from "../../Shared/Loading";
 import PartsCard from "./PartsCard";
 
 function ShowAllParts() {
-  const [products, isLoading] = useProducts();
-  if (isLoading) {
-    return <Loading />;
-  }
+  const [products] = useProducts();
+  
   return (
     <div className="p-10">
       <div>ShowAllParts {products.length}</div>

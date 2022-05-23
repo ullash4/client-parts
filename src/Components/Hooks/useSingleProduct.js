@@ -6,7 +6,9 @@ const useSignleProduct=()=>{
   const { id } = useParams();
   const [product, setProduct] = useState({})
   useEffect(()=>{
-    fetch(`http://localhost:5000/parts/${id}`)
+    fetch(`http://localhost:5000/parts/${id}`,{
+      method: "GET"
+    })
     .then(res=>res.json())
     .then(data=>setProduct(data))
   },[product])
