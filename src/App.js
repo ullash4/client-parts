@@ -21,6 +21,8 @@ import MakeAdmin from "./Components/Pages/Dashboard/MakeAdmin";
 import ManageAllOrders from "./Components/Pages/Dashboard/ManageAllOrders";
 import ManageProduct from "./Components/Pages/Dashboard/ManageProduct";
 import MyOrder from "./Components/Pages/Dashboard/MyOrder";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   useEffect(()=>{
@@ -55,6 +57,7 @@ function App() {
 
         <Route path="*" element={<NotfoundPage />} />
       </Routes>
+      <ToastContainer />
       <Footer />
     </div>
   );
