@@ -5,8 +5,8 @@ import Home from "./Components/Pages/Home/Home";
 import MyPortfolio from "./Components/Pages/MyPortfolio/MyPortfolio";
 import Navbar from "./Components/Shared/Navbar";
 import NotfoundPage from "./Components/Shared/NotfoundPage";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Footer from "./Components/Shared/Footer";
 import Login from "./Components/Shared/Login";
@@ -21,13 +21,14 @@ import MakeAdmin from "./Components/Pages/Dashboard/MakeAdmin";
 import ManageAllOrders from "./Components/Pages/Dashboard/ManageAllOrders";
 import ManageProduct from "./Components/Pages/Dashboard/ManageProduct";
 import MyOrder from "./Components/Pages/Dashboard/MyOrder";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import PrivetRoute from "./Components/Shared/PrivetRoute";
 
 function App() {
-  useEffect(()=>{
+  useEffect(() => {
     AOS.init();
-  },[])
+  }, []);
   return (
     <div>
       <Navbar />
@@ -42,17 +43,21 @@ function App() {
         <Route path="/allparts/:id" element={<Purchase />} />
         <Route path="/allreview" element={<AllReviews />} />
 
-        <Route path="/dashboard" 
-        element={ <Dashboard /> }>
-
-        <Route path="myprofile" element={<MyProfile />}  />
-        <Route path="addproduct" element={<AddProduct />}  />
-        <Route path="addreview" element={<AddReview />}  />
-        <Route path="makeadmin" element={<MakeAdmin />}  />
-        <Route path="manageallorders" element={<ManageAllOrders />}  />
-        <Route path="manageproduct" element={<ManageProduct />}  />
-        <Route path="myorder" element={<MyOrder />}  />
-        
+        <Route
+          path="/dashboard"
+          element={
+            <PrivetRoute>
+              <Dashboard />
+            </PrivetRoute>
+          }
+        >
+          <Route path="myprofile" element={<MyProfile />} />
+          <Route path="addproduct" element={<AddProduct />} />
+          <Route path="addreview" element={<AddReview />} />
+          <Route path="makeadmin" element={<MakeAdmin />} />
+          <Route path="manageallorders" element={<ManageAllOrders />} />
+          <Route path="manageproduct" element={<ManageProduct />} />
+          <Route path="myorder" element={<MyOrder />} />
         </Route>
 
         <Route path="*" element={<NotfoundPage />} />
@@ -64,5 +69,3 @@ function App() {
 }
 
 export default App;
-
-
