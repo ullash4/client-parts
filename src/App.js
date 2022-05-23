@@ -11,9 +11,7 @@ import { useEffect } from "react";
 import Footer from "./Components/Shared/Footer";
 import Login from "./Components/Shared/Login";
 import Signup from "./Components/Shared/Signup";
-import ShowAllParts from "./Components/Pages/Products/ShowAllParts";
 import Purchase from "./Components/Pages/Products/Purchase";
-import AllReviews from "./Components/Pages/Reviews/AllReviews";
 import MyProfile from "./Components/Pages/Dashboard/MyProfile";
 import AddProduct from "./Components/Pages/Dashboard/AddProduct";
 import AddReview from "./Components/Pages/Dashboard/AddReview";
@@ -39,16 +37,11 @@ function App() {
         <Route path="/portfolio" element={<MyPortfolio />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/allparts" element={<ShowAllParts />} />
-        <Route path="/allparts/:id" element={<Purchase />} />
-        <Route
-          path="/allreview"
-          element={
-            <PrivetRoute>
-              <AllReviews />
-            </PrivetRoute>
-          }
-        />
+        <Route path="/allparts/:id" element={
+          <PrivetRoute>
+        <Purchase />
+        </PrivetRoute>
+        } />
 
         <Route
           path="/dashboard"

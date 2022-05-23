@@ -76,57 +76,5 @@
       "email": "fletcherpowers@tasmania.com",
       "phone": "+1 (861) 469-2588",
       "description": "Labore labore commodo aliqua aute magna nisi non fugiat dolore incididunt et reprehenderit. Quis qui proident adipisicing tempor fugiat minim aliqua eiusmod. Aliqua elit do adipisicing fugiat eiusmod.\r\n"
-    },
-    {
-      "_id": "62892d34df4973eec6ec08ca",
-      "index": 6,
-      "price": "$2,544.61",
-      "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
-      "avquantity": 5779,
-      "minquantity": 151,
-      "name": "Angeline Chang",
-      "supplier": "BLEENDOT",
-      "email": "angelinechang@bleendot.com",
-      "phone": "+1 (973) 430-2929",
-      "description": "Mollit incididunt id deserunt pariatur ipsum nulla ex ullamco exercitation adipisicing. Ea fugiat minim non laborum. Est dolor est reprehenderit fugiat eu est reprehenderit exercitation. Irure sint sit in culpa cupidatat. Est cupidatat ipsum nisi dolor eu nisi velit nostrud proident ipsum aliqua officia ipsum. Mollit quis nostrud esse dolor.\r\n"
-    },
-    {
-      "_id": "62892d34f9262a276aec952d",
-      "index": 7,
-      "price": "$3,722.29",
-      "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
-      "avquantity": 9164,
-      "minquantity": 108,
-      "name": "Ruthie Hancock",
-      "supplier": "BEADZZA",
-      "email": "ruthiehancock@beadzza.com",
-      "phone": "+1 (815) 575-2761",
-      "description": "In officia fugiat cillum proident pariatur veniam laborum ad et velit commodo ea commodo anim. Laborum dolor consequat qui proident cupidatat esse laboris id. Tempor non ut duis sit fugiat.\r\n"
-    },
-    {
-      "_id": "62892d345b837e9a841bcdb8",
-      "index": 8,
-      "price": "$3,990.24",
-      "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
-      "avquantity": 6108,
-      "minquantity": 131,
-      "name": "Irene Hester",
-      "supplier": "COREPAN",
-      "email": "irenehester@corepan.com",
-      "phone": "+1 (883) 450-3046",
-      "description": "Adipisicing laboris commodo deserunt incididunt adipisicing elit. Culpa adipisicing excepteur anim in. Do mollit sunt aute veniam Lorem id culpa. Eiusmod nostrud quis ad aute. Ad ut voluptate aliqua tempor.\r\n"
-    },
-    {
-      "_id": "62892d3471325ac46bfc0c89",
-      "index": 9,
-      "price": "$1,891.26",
-      "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
-      "avquantity": 7165,
-      "minquantity": 177,
-      "name": "Glenna Merritt",
-      "supplier": "ACCUSAGE",
-      "email": "glennamerritt@accusage.com",
-      "phone": "+1 (879) 433-2137",
-      "description": "Proident deserunt non ut incididunt dolor aliqua ex. Non deserunt mollit laborum qui sit ex proident. Est excepteur dolore in elit tempor ad pariatur ad nostrud voluptate Lorem. Laborum eiusmod culpa fugiat proident anim occaecat. Elit aute enim qui officia sint duis voluptate tempor sit ut tempor.\r\n"
     }
   ]
