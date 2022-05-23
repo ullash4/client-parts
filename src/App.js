@@ -41,7 +41,14 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/allparts" element={<ShowAllParts />} />
         <Route path="/allparts/:id" element={<Purchase />} />
-        <Route path="/allreview" element={<AllReviews />} />
+        <Route
+          path="/allreview"
+          element={
+            <PrivetRoute>
+              <AllReviews />
+            </PrivetRoute>
+          }
+        />
 
         <Route
           path="/dashboard"

@@ -1,17 +1,19 @@
 import React, { useEffect } from 'react'
 import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 function SocialLogin() {
     const [signInWithGithub, user] = useSignInWithGithub(auth);
     const [signInWithGoogle, gUser] = useSignInWithGoogle(auth);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || '/';
     useEffect(()=>{
         if(user || gUser){
-          navigate('/')
+          navigate(from, {replace: true})
         }
-      },[navigate , user, gUser])
+      },[navigate , user, gUser, from])
     const handleSignInWithGoogle = () => {
         signInWithGoogle();
       };
