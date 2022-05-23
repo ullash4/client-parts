@@ -11,7 +11,7 @@ const useSignleProduct=()=>{
     })
     .then(res=>res.json())
     .then(data=>setProduct(data))
-  },[product])
+  },[id])
     return [product, id]
 }
 

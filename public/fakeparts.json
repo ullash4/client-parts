@@ -2,7 +2,7 @@
     {
       "_id": "62892d34b27bc06c487af651",
       "index": 0,
-      "price": "$1,512.78",
+      "price": 1512,
       "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
       "avquantity": 6670,
       "minquantity": 187,
@@ -15,7 +15,7 @@
     {
       "_id": "62892d34a1d89c3205603d67",
       "index": 1,
-      "price": "$1,881.35",
+      "price": 1881,
       "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
       "avquantity": 9975,
       "minquantity": 124,
@@ -28,7 +28,7 @@
     {
       "_id": "62892d34faa6467f99c35eed",
       "index": 2,
-      "price": "$2,395.07",
+      "price": 2395,
       "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
       "avquantity": 7565,
       "minquantity": 112,
@@ -41,7 +41,7 @@
     {
       "_id": "62892d34206c2a1740520895",
       "index": 3,
-      "price": "$3,315.74",
+      "price": 3315,
       "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
       "avquantity": 6399,
       "minquantity": 185,
@@ -54,7 +54,7 @@
     {
       "_id": "62892d34afef05c0b98ae70b",
       "index": 4,
-      "price": "$3,142.07",
+      "price": 3142,
       "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
       "avquantity": 7450,
       "minquantity": 123,
@@ -67,7 +67,7 @@
     {
       "_id": "62892d3408bd2503d95f8d1c",
       "index": 5,
-      "price": "$2,581.45",
+      "price": 2581,
       "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
       "avquantity": 6090,
       "minquantity": 101,

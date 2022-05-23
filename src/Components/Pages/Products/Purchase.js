@@ -1,251 +1,141 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import { useAuthState } from "react-firebase-hooks/auth";
+import useSignleProduct from "../../Hooks/useSingleProduct";
+import auth from "../../../firebase.init";
+import { toast } from "react-toastify";
 
 
 function Purchase() {
+  const [user] = useAuthState(auth);
+  const [product]= useSignleProduct()
+  const {
+    
+    handleSubmit,
+  } = useForm();
+
+  const {name, picture, price, minquantity, avquantity}= product;
   
+  
+
+  const onSubmit=()=>{
+    const productname = name;
+    const userName = user.displayName;
+    const email = user.email;
+    const quantity = minquantity;
+    const productPrice = price;
+    const order = {
+      productname,userName, email,quantity, productPrice
+    }
+    
+    fetch("http://localhost:5000/order",{
+      method:"POST",
+      headers:{
+        'content-type':'application/json'
+      },
+      body: JSON.stringify(order)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data);
+      toast.success("You made an order, see your order in dashboard")
+    })
+
+  }
 
   return (
     <section>
-  <h1 class="sr-only">Checkout</h1>
+  <h1 className="sr-only">Checkout</h1>
 
-  <div class="relative mx-auto max-w-screen-2xl">
-    <div class="grid grid-cols-1 md:grid-cols-2">
-      <div class="py-12 bg-gray-50 md:py-24">
-        <div class="max-w-lg px-4 mx-auto lg:px-8">
-          <div class="flex items-center">
-            <span class="w-10 h-10 bg-blue-900 rounded-full"></span>
-
-            <h2 class="ml-4 font-medium">BambooYou</h2>
+  <div className="relative mx-auto max-w-screen-2xl">
+    <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="py-5 bg-gray-50 ">
+        <div className="flex flex-col justify-around items-center gap-5">
+          <div>
+            <img className="w-[249px] h-[259px] rounded-xl" src={picture} alt="" />
           </div>
-
-          <div class="mt-8">
-            <p class="text-2xl font-medium tracking-tight">$99.99</p>
-            <p class="mt-1 text-sm text-gray-500">For the purchase of</p>
-          </div>
-
-          <div class="mt-12">
-            <div class="flow-root">
-              <ul class="-my-4 divide-y divide-gray-200">
-                <li class="flex items-center justify-between py-4">
-                  <div class="flex items-start">
-                    <img
-                      class="flex-shrink-0 object-cover w-16 h-16 rounded-lg"
-                      src="https://images.unsplash.com/photo-1588099768531-a72d4a198538?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2xvdGhpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
-                      alt=""
-                    />
-
-                    <div class="ml-4">
-                      <p class="text-sm">Vibrant Trainers</p>
-
-                      <dl class="mt-1 space-y-1 text-xs text-gray-500">
-                        <div>
-                          <dt class="inline">Color:</dt>
-                          <dd class="inline">Blue</dd>
-                        </div>
-
-                        <div>
-                          <dt class="inline">Size:</dt>
-                          <dd class="inline">UK 10</dd>
-                        </div>
-                      </dl>
-                    </div>
-                  </div>
-
-                  <div>
-                    <p class="text-sm">
-                      $49.99
-                      <small class="text-gray-500">x1</small>
-                    </p>
-                  </div>
-                </li>
-
-                <li class="flex items-center justify-between py-4">
-                  <div class="flex items-start">
-                    <img
-                      class="flex-shrink-0 object-cover w-16 h-16 rounded-lg"
-                      src="https://images.unsplash.com/photo-1588099768531-a72d4a198538?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2xvdGhpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
-                      alt=""
-                    />
-
-                    <div class="ml-4">
-                      <p class="text-sm">Vibrant Trainers</p>
-
-                      <dl class="mt-1 space-y-1 text-xs text-gray-500">
-                        <div>
-                          <dt class="inline">Color:</dt>
-                          <dd class="inline">Blue</dd>
-                        </div>
-
-                        <div>
-                          <dt class="inline">Size:</dt>
-                          <dd class="inline">UK 10</dd>
-                        </div>
-                      </dl>
-                    </div>
-                  </div>
-
-                  <div>
-                    <p class="text-sm">
-                      $25
-                      <small class="text-gray-500">x2</small>
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
+          <div>
+            <p className="text-xl font-medium">Name: {name}</p>
+            <p className="text-xl font-medium">Minimun Quantity: {minquantity} pices</p>
+            <p className="text-xl font-medium">Available quantity: {avquantity} pices</p>
+            <p className="text-xl font-medium">Price: ${price}</p>
           </div>
         </div>
       </div>
 
-      <div class="py-12 bg-white md:py-24">
-        <div class="max-w-lg px-4 mx-auto lg:px-8">
-          <form class="grid grid-cols-6 gap-4">
-            <div class="col-span-3">
-              <label class="block mb-1 text-sm text-gray-600" for="first_name">
-                First Name
-              </label>
+      <div className="py-5 bg-white">
+        <div className="max-w-lg px-4 mx-auto lg:px-8">
+        <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Name</span>
+          </label>
+          <input
+            
+            type="text"
+            value={user.displayName}
+            disabled
+            className="input input-bordered w-full max-w-xs"
+          />
+        </div>
 
-              <input
-                class="rounded-lg shadow-sm border-gray-200 w-full text-sm p-2.5"
-                type="text"
-                id="frst_name"
-              />
-            </div>
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Email</span>
+          </label>
+          <input
+            
+            type="email"
+            value={user.email}
+            disabled
+            className="input input-bordered w-full max-w-xs"
+          />
+        </div>
 
-            <div class="col-span-3">
-              <label class="block mb-1 text-sm text-gray-600" for="last_name">
-                Last Name
-              </label>
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Product Name</span>
+          </label>
+          <input
+            
+            type="text"
+            value={name}
+            disabled
+            className="input input-bordered w-full max-w-xs"
+          />
+        </div>
 
-              <input
-                class="rounded-lg shadow-sm border-gray-200 w-full text-sm p-2.5"
-                type="text"
-                id="last_name"
-              />
-            </div>
+       
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Quantity</span>
+          </label>
+          <input
+            
+            type="number"
+            value={minquantity}
+            className="input input-bordered w-full max-w-xs"
+          />
+        </div>
 
-            <div class="col-span-6">
-              <label class="block mb-1 text-sm text-gray-600" for="email">
-                Email
-              </label>
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Price</span>
+          </label>
+          <input
+            
+            type="number"
+            value={price}
+            className="input input-bordered w-full max-w-xs"
+          />
+        </div>
 
-              <input
-                class="rounded-lg shadow-sm border-gray-200 w-full text-sm p-2.5"
-                type="email"
-                id="email"
-              />
-            </div>
-
-            <div class="col-span-6">
-              <label class="block mb-1 text-sm text-gray-600" for="phone">
-                Phone
-              </label>
-
-              <input
-                class="rounded-lg shadow-sm border-gray-200 w-full text-sm p-2.5"
-                type="tel"
-                id="phone"
-              />
-            </div>
-
-            <fieldset class="col-span-6">
-              <legend class="block mb-1 text-sm text-gray-600">
-                Card Details
-              </legend>
-
-              <div class="-space-y-px bg-white rounded-lg shadow-sm">
-                <div>
-                  <label class="sr-only" for="card-number">Card Number</label>
-
-                  <input
-                    class="border-gray-200 relative rounded-t-lg w-full focus:z-10 text-sm p-2.5 placeholder-gray-400"
-                    type="text"
-                    name="card-number"
-                    id="card-number"
-                    placeholder="Card number"
-                  />
-                </div>
-
-                <div class="flex -space-x-px">
-                  <div class="flex-1">
-                    <label class="sr-only" for="card-expiration-date">
-                      Expiration Date
-                    </label>
-
-                    <input
-                      class="border-gray-200 relative rounded-bl-lg w-full focus:z-10 text-sm p-2.5 placeholder-gray-400"
-                      type="text"
-                      name="card-expiration-date"
-                      id="card-expiration-date"
-                      placeholder="MM / YY"
-                    />
-                  </div>
-
-                  <div class="flex-1">
-                    <label class="sr-only" for="card-cvc">CVC</label>
-
-                    <input
-                      class="border-gray-200 relative rounded-br-lg w-full focus:z-10 text-sm p-2.5 placeholder-gray-400"
-                      type="text"
-                      name="card-cvc"
-                      id="card-cvc"
-                      placeholder="CVC"
-                    />
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-
-            <fieldset class="col-span-6">
-              <legend class="block mb-1 text-sm text-gray-600">
-                Billing Address
-              </legend>
-
-              <div class="-space-y-px bg-white rounded-lg shadow-sm">
-                <div>
-                  <label class="sr-only" for="country">Country</label>
-
-                  <select
-                    class="border-gray-200 relative rounded-t-lg w-full focus:z-10 text-sm p-2.5"
-                    id="country"
-                    name="country"
-                    autocomplete="country-name"
-                  >
-                    <option>England</option>
-                    <option>Wales</option>
-                    <option>Scotland</option>
-                    <option>France</option>
-                    <option>Belgium</option>
-                    <option>Japan</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label class="sr-only" for="postal-code">
-                    ZIP/Post Code
-                  </label>
-
-                  <input
-                    class="border-gray-200 relative rounded-b-lg w-full focus:z-10 text-sm p-2.5 placeholder-gray-400"
-                    type="text"
-                    name="postal-code"
-                    id="postal-code"
-                    autocomplete="postal-code"
-                    placeholder="ZIP/Post Code"
-                  />
-                </div>
-              </div>
-            </fieldset>
-
-            <div class="col-span-6">
-              <button
-                class="rounded-lg bg-black text-sm p-2.5 text-white w-full block"
-                type="submit"
-              >
-                Pay Now
-              </button>
-            </div>
-          </form>
+        <input
+          className="btn bg-black outline-none text-white hover:text-white w-full max-w-xs mt-5"
+          value="Purchase"
+          type="submit"
+        />
+      </form>
         </div>
       </div>
     </div>
