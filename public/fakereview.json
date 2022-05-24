@@ -1,38 +1,8 @@
 [
-    {
-      "_id": "628a2b2b59e08fb35af0545f",
-      "index": 0,
-      "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
-      "name": "Pamela Gutierrez",
-      "company": "ZOINAGE",
-      "review": "Velit voluptate dolor nostrud fugiat fugiat aute minim. Nisi dolore consectetur eu incididunt elit minim. Do sint consectetur nulla aute commodo consectetur consequat aliquip. Nostrud velit enim consectetur quis ea deserunt sunt ex proident. Nulla in commodo sit cillum non ad ullamco commodo pariatur consequat.\r\n"
-    },
-    {
-      "_id": "628a2b2b18048075ab282bad",
-      "index": 1,
-      "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
-      "name": "Harrington Glass",
-      "company": "GENEKOM",
-      "review": "Laborum amet duis amet incididunt adipisicing mollit. Amet magna dolore reprehenderit minim labore aute. Laborum dolor sint velit aliquip. Minim pariatur laborum cillum aliquip commodo excepteur consectetur eiusmod consectetur irure. Non officia consectetur sunt magna exercitation. Velit consequat sit amet irure nulla sunt ut dolor excepteur.\r\n"
-    },
-    {
-      "_id": "628a2b2bb4e6fa823b3ec740",
-      "index": 2,
-      "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
-      "name": "Oneal Witt",
-      "company": "PROTODYNE",
-      "review": "Lorem ullamco aliqua sit officia minim qui quis cillum sint ea minim consequat aliqua sint. Adipisicing Lorem excepteur ea adipisicing in enim non mollit commodo. Dolore laborum cupidatat officia ea mollit dolor cillum ex id eu labore.\r\n"
-    },
-    {
-      "_id": "628a2b2b02846736f44ccc2e",
-      "index": 3,
-      "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
-      "name": "Harding Duncan",
-      "company": "APEXTRI",
-      "review": "Minim dolor pariatur nisi irure aliqua pariatur eu eiusmod nisi. Elit quis quis anim officia. Nostrud sunt dolor Lorem consectetur reprehenderit nulla. Velit irure voluptate ipsum aliquip Lorem pariatur consequat esse voluptate nisi anim enim. Elit nulla incididunt commodo enim nisi consequat officia cillum qui. Ipsum culpa aute exercitation sint et aute ex pariatur. Quis velit laborum minim deserunt ut.\r\n"
-    },
+    
     {
       "_id": "628a2b2b760d70634e73908f",
+      "ratings": "5",
       "index": 4,
       "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
       "name": "Dina Mclaughlin",
@@ -41,6 +11,7 @@
     },
     {
       "_id": "628a2b2b8df33bc76da850ca",
+      "ratings": "4",
       "index": 5,
       "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
       "name": "Corina Clay",
@@ -49,6 +20,7 @@
     },
     {
       "_id": "628a2b2bed245a1f5d637d9f",
+      "ratings": "4",
       "index": 6,
       "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
       "name": "Saundra Maynard",
@@ -57,6 +29,7 @@
     },
     {
       "_id": "628a2b2bee778142a05a48db",
+      "ratings": "4",
       "index": 7,
       "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
       "name": "Davenport Faulkner",
@@ -65,6 +38,7 @@
     },
     {
       "_id": "628a2b2b6b1880ddfe9213c4",
+      "ratings": "2",
       "index": 8,
       "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
       "name": "Amy Mayo",
@@ -73,6 +47,7 @@
     },
     {
       "_id": "628arrb2b6b1880ddfe9213c4",
+      "ratings": "5",
       "index": 9,
       "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
       "name": "Amy Mayo",
@@ -81,6 +56,7 @@
     },
     {
       "_id": "628arrb2b6b1880ddfe97713c4",
+      "ratings": "3",
       "index": 10,
       "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
       "name": "Amy Mayo",
@@ -89,6 +65,7 @@
     },
     {
       "_id": "628arrb2b6b1880ddfe9771553c4",
+      "ratings": "4",
       "index": 11,
       "picture": "https://i.ibb.co/8rNFSqY/Untitled-design-11.png",
       "name": "Amy Mayo",
