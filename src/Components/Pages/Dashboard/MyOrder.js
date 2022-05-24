@@ -7,23 +7,26 @@ import auth from "../../../firebase.init";
 function MyOrder() {
   const [orders, setOrders] = useState([]);
   const [user] = useAuthState(auth);
-  const navigate= useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/order?email=${user.email}`, {
-        method: "GET",
-        headers:{
-          'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+      fetch(
+        `https://secret-stream-34458.herokuapp.com/order?email=${user.email}`,
+        {
+          method: "GET",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
         }
-      })
+      )
         .then((res) => {
-          if(res.status === 403 || res.status === 401){
-            signOut(auth)
-            localStorage.removeItem('accessToken')
-            navigate('/login')
+          if (res.status === 403 || res.status === 401) {
+            signOut(auth);
+            localStorage.removeItem("accessToken");
+            navigate("/login");
           }
-          return res.json()
+          return res.json();
         })
         .then((data) => setOrders(data));
     }

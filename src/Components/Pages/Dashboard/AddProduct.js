@@ -1,6 +1,6 @@
-import React from 'react'
-import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
+import React from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 function AddProduct() {
   const {
@@ -8,33 +8,45 @@ function AddProduct() {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const onSubmit=(data)=>{
-    const price=data.price;
-    const picture=data.picture;
-    const avquantity=data.avquantity;
-    const minquantity=data.minquantity;
-    const name=data.name;
-    const email=data.email;
-    const description=data.description;
-    const product={
-      price, picture, avquantity,minquantity,name,email,description 
-    }
-    fetch("http://localhost:5000/parts",{
-      method:"POST",
-      headers:{
-        'content-type':'application/json'
+
+  
+
+  const onSubmit = (data) => {
+
+    
+
+    const price = data.price;
+    const picture = data.image;
+    const avquantity = data.avquantity;
+    const minquantity = data.minquantity;
+    const name = data.name;
+    const email = data.email;
+    const description = data.description;
+    const product = {
+      price,
+      picture,
+      avquantity,
+      minquantity,
+      name,
+      email,
+      description,
+    };
+    fetch("https://secret-stream-34458.herokuapp.com/parts", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
       },
-      body: JSON.stringify(product)
+      body: JSON.stringify(product),
     })
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data)
-      toast.success("successfully added a product")
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast.success("successfully added a product");
+      });
     console.log(data);
-  }
+  };
   return (
-    <div className='my-2 mb-10'>
+    <div className="my-2 mb-10">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xs">
           <label className="label">
@@ -104,7 +116,6 @@ function AddProduct() {
                 message: "Description is required",
               },
             })}
-            
             placeholder="Description"
             className="input input-bordered w-full max-w-xs"
           />
@@ -189,8 +200,6 @@ function AddProduct() {
           </label>
         </div>
 
-        
-
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text">Image</span>
@@ -221,7 +230,7 @@ function AddProduct() {
         />
       </form>
     </div>
-  )
+  );
 }
 
-export default AddProduct
+export default AddProduct;

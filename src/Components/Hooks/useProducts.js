@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 
-
 function useProducts() {
-  const [products, setProducts] = useState([])
-  useEffect(()=>{
-    fetch(`http://localhost:5000/parts`, {
-      method:"GET"
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch(`https://secret-stream-34458.herokuapp.com/parts`, {
+      method: "GET",
     })
-    .then(res=>res.json())
-    .then(data=>setProducts(data))
-  },[products])
-  
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, [products]);
+
   return [products];
 }
 

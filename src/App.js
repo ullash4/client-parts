@@ -22,6 +22,7 @@ import MyOrder from "./Components/Pages/Dashboard/MyOrder";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PrivetRoute from "./Components/Shared/PrivetRoute";
+import PrivetRouteAdmin from "./Components/Shared/PrivetRouteAdmin";
 
 function App() {
   useEffect(() => {
@@ -54,9 +55,15 @@ function App() {
           <Route path="myprofile" element={<MyProfile />} />
           <Route path="addproduct" element={<AddProduct />} />
           <Route path="addreview" element={<AddReview />} />
-          <Route path="makeadmin" element={<MakeAdmin />} />
-          <Route path="manageallorders" element={<ManageAllOrders />} />
-          <Route path="manageproduct" element={<ManageProduct />} />
+          <Route path="makeadmin" element={<PrivetRouteAdmin>
+            <MakeAdmin />
+          </PrivetRouteAdmin>} />
+          <Route path="manageallorders" element={<PrivetRouteAdmin>
+            <ManageAllOrders />
+          </PrivetRouteAdmin>} />
+          <Route path="manageproduct" element={<PrivetRouteAdmin>
+            <ManageProduct />
+          </PrivetRouteAdmin>} />
           <Route path="myorder" element={<MyOrder />} />
         </Route>
 
