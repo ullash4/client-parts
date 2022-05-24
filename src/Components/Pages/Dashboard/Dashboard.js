@@ -22,12 +22,12 @@ function Dashboard() {
           <li>
             <NavLink to={"/dashboard/myprofile"}>My Profile</NavLink>
           </li>
-          {admin && <li>
+          {admin ? <li>
             <NavLink to={"/dashboard/addproduct"}>Add Product</NavLink>
-          </li>}
-          {user && <li>
+          </li> : <li>
             <NavLink to={"/dashboard/addreview"}>Add Review</NavLink>
           </li>}
+          
           {admin && <li>
             <NavLink to={"/dashboard/makeadmin"}>Make Admin</NavLink>
           </li>}
@@ -36,12 +36,12 @@ function Dashboard() {
               Manage All Orders
             </NavLink>
           </li>}
-          {admin && <li>
+          {admin ? <li>
             <NavLink to={"/dashboard/manageproduct"}>Manage Products</NavLink>
-          </li>}
-          {user && <li>
+          </li>: <li>
             <NavLink to={"/dashboard/myorder"}>My Order</NavLink>
           </li>}
+          
         </ul>
       </div>
     </div>

@@ -1,36 +1,57 @@
 import { signOut } from "firebase/auth";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading";
 
 function MyOrder() {
-  const [orders, setOrders] = useState([]);
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (user) {
-      fetch(
-        `https://secret-stream-34458.herokuapp.com/order?email=${user.email}`,
-        {
-          method: "GET",
-          headers: {
-            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-          },
-        }
-      )
-        .then((res) => {
-          if (res.status === 403 || res.status === 401) {
-            signOut(auth);
-            localStorage.removeItem("accessToken");
-            navigate("/login");
-          }
-          return res.json();
-        })
-        .then((data) => setOrders(data));
-    }
-  }, [user, navigate]);
+  const {
+    isLoading,
+    data: orders,
+    refetch
+  } = useQuery("doctors", () =>
+    fetch(`https://secret-stream-34458.herokuapp.com/order?email=${user.email}`, {
+      headers: {
+        authorization: `bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => {
+      if (res.status === 403 || res.status === 401) {
+        signOut(auth);
+        localStorage.removeItem("accessToken");
+        navigate("/login");
+      }
+      return res.json();
+    })
+  );
+
+  if(isLoading){
+      return <Loading></Loading>
+  }
+
+
+
+  const handleDelete=(id)=>{
+    fetch(`http://localhost:5000/order/${id}`,{
+      method:"DELETE",
+      headers: {
+        'authorization': `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      refetch()
+      console.log(data)
+      toast.success('successfully delete one order')
+    })
+  }
+
+
   return (
     <div>
       <h1 className="text-xl text-center">My orderment {orders.length}</h1>
@@ -77,9 +98,10 @@ function MyOrder() {
                 <td>
                   {order.productPrice && (
                     <Link to={`payment/${order._id}`}>
-                      <button className="btn btn-xs">Pay</button>
+                      <button className="btn btn-xs mx-1">Pay</button>
                     </Link>
                   )}
+                  <button onClick={()=>handleDelete(order._id)} className="btn btn-xs mx-1 btn-error">Cancel</button>
                 </td>
               </tr>
             ))}
