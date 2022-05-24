@@ -31,10 +31,10 @@ function Signup() {
   const location = useLocation();
   let from = location.state?.from?.pathname || '/';
   useEffect(()=>{
-      if(user ){
+      if(token ){
         navigate(from, {replace: true})
       }
-    },[navigate , user, from])
+    },[navigate , token, from])
 
   if(loading || updating){
     return <Loading />

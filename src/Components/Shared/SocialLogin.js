@@ -12,10 +12,10 @@ function SocialLogin() {
     const [token] = useToken(user || gUser)
     let from = location.state?.from?.pathname || '/';
     useEffect(()=>{
-        if(user || gUser){
+        if(token){
           navigate(from, {replace: true})
         }
-      },[navigate , user, gUser, from])
+      },[navigate , token, from])
     const handleSignInWithGoogle = () => {
         signInWithGoogle();
       };
