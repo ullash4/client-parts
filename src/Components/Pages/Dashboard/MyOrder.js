@@ -37,7 +37,9 @@ function MyOrder() {
   // console.log(orders);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/order/${id}`, {
+    const sure = window.confirm('Are sure to delete it?')
+    if(sure){
+      fetch(`http://localhost:5000/order/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -49,6 +51,7 @@ function MyOrder() {
         console.log(data);
         toast.success("successfully delete one order");
       });
+    }
   };
 
   return (
