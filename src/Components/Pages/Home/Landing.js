@@ -1,4 +1,5 @@
 import React from "react";
+import headerpic from '../../../assets/headerpic.png'
 
 function Landing() {
   return (
@@ -14,14 +15,14 @@ function Landing() {
               <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-primary relative inline-block mx-3">
                 <span className="relative text-white mx-1 px-1"> premium </span>
               </span>
-              new glasses exported from US
+              parts for Bike exported from US
             </h1>
             <p
               data-aos="fade-left"
               className="mt-2 text-gray-600 dark:text-gray-300"
             >
-              We work with the best remunated glasses dealers in US to find your
-              new glasses.
+              We work with the best bike parts dealers in US to find your
+              bike parts.
             </p>
             <div
               data-aos="fade-right"
@@ -109,7 +110,7 @@ function Landing() {
                   />
                 </svg>
 
-                <span className="mx-3">From US glasses dealers</span>
+                <span className="mx-3">From US parts dealers</span>
               </div>
 
               <div
@@ -165,7 +166,7 @@ function Landing() {
         >
           <img
             className="object-cover w-full h-full max-w-2xl rounded-md"
-            src="https://images.unsplash.com/photo-1555181126-cf46a03827c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+            src={headerpic}
             alt="glasses"
           />
         </div>

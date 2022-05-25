@@ -11,8 +11,12 @@ function BusinessStats() {
     <section className="">
       <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
         <div className="max-w-xl">
-          <h2 className="text-3xl font-bold sm:text-6xl">
-            Business Summary Of Our Amazing Website
+          <h2 className="text-3xl font-bold sm:text-6xl mb-7">
+            Summary{" "}
+            <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-primary relative inline-block mx-3">
+              <span className="relative text-white mx-1 px-1"> of </span>
+            </span>
+            Business
           </h2>
 
           <p
@@ -21,9 +25,7 @@ function BusinessStats() {
             data-aos-delay="300"
             className="mt-4 sm:text-xl"
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic
-            tempore beatae facilis dignissimos rem praesentium officia obcaecati
-            quisquam iure recusandae!
+            This is our bussiness summary . We proud to our success
           </p>
         </div>
 

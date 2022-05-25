@@ -5,7 +5,9 @@ function ContactUs() {
   return (
     <div className="my-16 px-10">
       <h1 className="max-w-xl text-3xl font-bold sm:text-6xl mb-6">
-        Stay Conneted with Cavalry Parts
+        Stay Conneted <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-primary relative inline-block mx-1">
+              <span className="relative text-white mx-1 px-1"> with </span>
+            </span>  Cavalry Parts
       </h1>
       <div className="hero ">
         <div className="hero-content flex-col lg:flex-row-reverse gap-32">
