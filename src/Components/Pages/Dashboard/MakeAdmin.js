@@ -9,7 +9,7 @@ function MakeAdmin() {
     data: users,
     refetch,
   } = useQuery("users", () =>
-    fetch("https://secret-stream-34458.herokuapp.com/user", {
+    fetch("http://localhost:5000/user", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

@@ -5,7 +5,7 @@ const useSignleProduct = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   useEffect(() => {
-    fetch(`https://secret-stream-34458.herokuapp.com/parts/${id}`, {
+    fetch(`http://localhost:5000/parts/${id}`, {
       method: "GET",
     })
       .then((res) => res.json())

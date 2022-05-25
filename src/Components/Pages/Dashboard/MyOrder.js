@@ -14,9 +14,9 @@ function MyOrder() {
   const {
     isLoading,
     data: orders,
-    refetch
-  } = useQuery("doctors", () =>
-    fetch(`https://secret-stream-34458.herokuapp.com/order?email=${user.email}`, {
+    refetch,
+  } = useQuery("orders", () =>
+    fetch(`http://localhost:5000/order?email=${user.email}`, {
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
       },
@@ -30,27 +30,26 @@ function MyOrder() {
     })
   );
 
-  if(isLoading){
-      return <Loading></Loading>
+  if (isLoading) {
+    return <Loading></Loading>;
   }
 
+  // console.log(orders);
 
-
-  const handleDelete=(id)=>{
-    fetch(`http://localhost:5000/order/${id}`,{
-      method:"DELETE",
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/order/${id}`, {
+      method: "DELETE",
       headers: {
-        'authorization': `Bearer ${localStorage.getItem("accessToken")}`,
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     })
-    .then(res=>res.json())
-    .then(data=>{
-      refetch()
-      console.log(data)
-      toast.success('successfully delete one order')
-    })
-  }
-
+      .then((res) => res.json())
+      .then((data) => {
+        refetch();
+        console.log(data);
+        toast.success("successfully delete one order");
+      });
+  };
 
   return (
     <div>
@@ -96,12 +95,20 @@ function MyOrder() {
                 <td>{order.quantity} pices</td>
 
                 <td>
-                  {order.productPrice && (
-                    <Link to={`payment/${order._id}`}>
+                  {(order.productPrice && !order.paid) && (
+                    <Link to={`/dashboard/payment/${order._id}`}>
                       <button className="btn btn-xs mx-1">Pay</button>
                     </Link>
                   )}
-                  <button onClick={()=>handleDelete(order._id)} className="btn btn-xs mx-1 btn-error">Cancel</button>
+                  {(order.productPrice && order.paid) && (
+                      <button className="btn btn-xs btn-success mx-1">Paid</button>
+                  )}
+                  <button
+                    onClick={() => handleDelete(order._id)}
+                    className="btn btn-xs mx-1 btn-error"
+                  >
+                    Cancel
+                  </button>
                 </td>
               </tr>
             ))}

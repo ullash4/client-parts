@@ -13,7 +13,7 @@ function AddReview() {
       ratings,
       review,
     };
-    fetch("https://secret-stream-34458.herokuapp.com/review", {
+    fetch("http://localhost:5000/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",

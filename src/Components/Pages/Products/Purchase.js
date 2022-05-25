@@ -9,9 +9,7 @@ function Purchase() {
   const [user] = useAuthState(auth);
   const [product] = useSignleProduct();
   const { handleSubmit } = useForm();
-  const [value, setValue]=useState("")
-  console.log(value);
-  
+  const [value, setValue] = useState("");
 
   const { name, picture, price, minquantity, avquantity } = product;
 
@@ -29,7 +27,7 @@ function Purchase() {
       productPrice,
     };
 
-    fetch("https://secret-stream-34458.herokuapp.com/order", {
+    fetch("http://localhost:5000/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -44,8 +42,8 @@ function Purchase() {
   };
 
   let errorMessage;
-  if(value>avquantity || value < minquantity){
-    errorMessage= <p className="text-red-500">Please set exact quantity</p>
+  if (value > avquantity || value < minquantity) {
+    errorMessage = <p className="text-red-500">Please set exact quantity</p>;
   }
 
   return (
@@ -122,7 +120,7 @@ function Purchase() {
                   <input
                     type="number"
                     value={value || minquantity}
-                    onChange={(e)=>setValue(e.target.value)}
+                    onChange={(e) => setValue(e.target.value)}
                     className="input input-bordered w-full max-w-xs"
                   />
                   {errorMessage}

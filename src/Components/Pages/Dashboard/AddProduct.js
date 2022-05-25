@@ -9,12 +9,7 @@ function AddProduct() {
     handleSubmit,
   } = useForm();
 
-  
-
   const onSubmit = (data) => {
-
-    
-
     const price = data.price;
     const picture = data.image;
     const avquantity = data.avquantity;
@@ -31,7 +26,7 @@ function AddProduct() {
       email,
       description,
     };
-    fetch("https://secret-stream-34458.herokuapp.com/parts", {
+    fetch("http://localhost:5000/parts", {
       method: "POST",
       headers: {
         "content-type": "application/json",
