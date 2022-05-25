@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useAuthState } from "react-firebase-hooks/auth";
 import useSignleProduct from "../../Hooks/useSingleProduct";
@@ -9,6 +9,9 @@ function Purchase() {
   const [user] = useAuthState(auth);
   const [product] = useSignleProduct();
   const { handleSubmit } = useForm();
+  const [value, setValue]=useState("")
+  console.log(value);
+  
 
   const { name, picture, price, minquantity, avquantity } = product;
 
@@ -39,6 +42,11 @@ function Purchase() {
         toast.success("You made an order, see your order in dashboard");
       });
   };
+
+  let errorMessage;
+  if(value>avquantity || value < minquantity){
+    errorMessage= <p className="text-red-500">Please set exact quantity</p>
+  }
 
   return (
     <section>
@@ -113,9 +121,11 @@ function Purchase() {
                   </label>
                   <input
                     type="number"
-                    value={minquantity}
+                    value={value || minquantity}
+                    onChange={(e)=>setValue(e.target.value)}
                     className="input input-bordered w-full max-w-xs"
                   />
+                  {errorMessage}
                 </div>
 
                 <div className="form-control w-full max-w-xs">
