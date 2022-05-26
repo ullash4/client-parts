@@ -12,7 +12,7 @@ function Payment() {
   const { id } = useParams();
   const [order, setOrder] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/order/${id}`, {
+    fetch(`https://morning-refuge-94486.herokuapp.com/order/${id}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

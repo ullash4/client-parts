@@ -27,7 +27,7 @@ function Purchase() {
       productPrice,
     };
 
-    fetch("http://localhost:5000/order", {
+    fetch("https://morning-refuge-94486.herokuapp.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",

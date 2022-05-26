@@ -26,7 +26,7 @@ function AddProduct() {
       email,
       description,
     };
-    fetch("http://localhost:5000/parts", {
+    fetch("https://morning-refuge-94486.herokuapp.com/parts", {
       method: "POST",
       headers: {
         "content-type": "application/json",

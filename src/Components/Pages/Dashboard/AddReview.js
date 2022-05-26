@@ -13,7 +13,7 @@ function AddReview() {
       ratings,
       review,
     };
-    fetch("http://localhost:5000/review", {
+    fetch("https://morning-refuge-94486.herokuapp.com/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",

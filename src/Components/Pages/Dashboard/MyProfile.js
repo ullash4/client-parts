@@ -15,7 +15,7 @@ function MyProfile() {
     data: Duser,
     refetch,
   } = useQuery("user", () =>
-    fetch("http://localhost:5000/user", {
+    fetch("https://morning-refuge-94486.herokuapp.com/user", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -43,7 +43,7 @@ function MyProfile() {
     // }
     // console.log(userN);
 
-    //     fetch(`http://localhost:5000/user`, {
+    //     fetch(`https://morning-refuge-94486.herokuapp.com/user`, {
     //   method: 'PUT',
     //   body: JSON.stringify(userN),
     //   headers: {

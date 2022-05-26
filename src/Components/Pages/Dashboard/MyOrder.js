@@ -16,11 +16,14 @@ function MyOrder() {
     data: orders,
     refetch,
   } = useQuery("orders", () =>
-    fetch(`http://localhost:5000/order?email=${user.email}`, {
-      headers: {
-        authorization: `bearer ${localStorage.getItem("accessToken")}`,
-      },
-    }).then((res) => {
+    fetch(
+      `https://morning-refuge-94486.herokuapp.com/order?email=${user.email}`,
+      {
+        headers: {
+          authorization: `bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    ).then((res) => {
       if (res.status === 403 || res.status === 401) {
         signOut(auth);
         localStorage.removeItem("accessToken");
@@ -31,26 +34,27 @@ function MyOrder() {
   );
 
   if (isLoading) {
+    refetch();
     return <Loading></Loading>;
   }
 
   // console.log(orders);
 
   const handleDelete = (id) => {
-    const sure = window.confirm('Are sure to delete it?')
-    if(sure){
-      fetch(`http://localhost:5000/order/${id}`, {
-      method: "DELETE",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        refetch();
-        console.log(data);
-        toast.success("successfully delete one order");
-      });
+    const sure = window.confirm("Are sure to delete it?");
+    if (sure) {
+      fetch(`https://morning-refuge-94486.herokuapp.com/order/${id}`, {
+        method: "DELETE",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          refetch();
+          console.log(data);
+          toast.success("successfully delete one order");
+        });
     }
   };
 
@@ -98,13 +102,15 @@ function MyOrder() {
                 <td>{order.quantity} pices</td>
 
                 <td>
-                  {(order.productPrice && !order.paid) && (
+                  {order.productPrice && !order.paid && (
                     <Link to={`/dashboard/payment/${order._id}`}>
                       <button className="btn btn-xs mx-1">Pay</button>
                     </Link>
                   )}
-                  {(order.productPrice && order.paid) && (
-                      <button className="btn btn-xs btn-success mx-1">Paid</button>
+                  {order.productPrice && order.paid && (
+                    <button className="btn btn-xs btn-success mx-1">
+                      Paid
+                    </button>
                   )}
                   <button
                     onClick={() => handleDelete(order._id)}
